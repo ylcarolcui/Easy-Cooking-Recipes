@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
+
 const photos = [
 	{
 		name: 'first image',
@@ -30,21 +31,23 @@ function Home () {
 		className: 'slides',
 	};
 	return (
-        <>
-		<div className='home'>
-
-			<h1>Easy Cook Recipe</h1>
-			<form className='form'>
-				<input
-					placeholder='Search food'
-					type='text'
-					name='searchString'
-					required
-				/>
-				<button type='submit'>Search</button>
-			</form>
-            </div>
-			<div className='image'>
+		<>
+			<div className='home'>
+				<h1>
+					Easy Cook Recipe
+				</h1>
+				<form className='form'>
+					<input
+						placeholder='Search food'
+						type='text'
+						name='searchString'
+                        required
+                        autoComplete="off"
+					/>
+					<button type='submit' value='search'>Search</button>
+				</form>
+			</div>
+			{/* <div className='image'>
 				<Slider {...settings}>
 					{photos.map((photo, idx) => {
 						return (
@@ -59,7 +62,7 @@ function Home () {
 						);
 					})}
 				</Slider>
-			</div>
+			</div> */}
 		</>
 	);
 }
