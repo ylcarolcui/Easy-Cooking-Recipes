@@ -3,7 +3,8 @@ import './Home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-
+import Search from './Search.js';
+import Foods from './Foods';
 
 // const photos = [
 // 	{
@@ -19,7 +20,7 @@ import Slider from 'react-slick';
 // 		url: 'https://i.imgur.com/d037V7v.jpg',
 // 	},
 // ];
-function Home (props) {
+function Home({ onSubmit, onChange, searchString, recipes }) {
 	// const settings = {
 	// 	dots: true,
 	// 	fade: true,
@@ -32,20 +33,12 @@ function Home (props) {
 	// };
 	return (
 		<>
-			<div className='home'>
-				<form className='form' onSubmit={props.onSubmit}>
-					<input
-						placeholder='Search food'
-						type='text'
-						name='searchString'
-                        required
-						autoComplete="off"
-						onChange={props.onChange}
-						value={props.searchString}
-					/>
-					<button type='submit' value='search'>Search</button>
-				</form>
-			</div>
+			<Search
+				onSubmit={onSubmit}
+				onChange={onChange}
+				searchString={searchString}
+			/>
+			<Foods recipes={recipes} />
 			{/* <div className='image'>
 				<Slider {...settings}>
 					{photos.map((photo, idx) => {

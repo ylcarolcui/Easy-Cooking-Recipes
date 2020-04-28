@@ -13,6 +13,7 @@ function App() {
 	};
 	const [recipes, setRecipes] = useState([]);
 	const [searchString, setSearchString] = useState('');
+	const [showFood, setShowFood] = useState(false);
 
 	useEffect(() => {
 		getRecipes(searchString);
@@ -24,7 +25,7 @@ function App() {
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				// console.log(response.hits)
+				console.log(response.hits)
 				setRecipes(response.hits);
 				setSearchString('');
 			})
@@ -34,6 +35,7 @@ function App() {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		getRecipes(searchString);
+		setShowFood(!showFood);
 	};
 
 	const onChange = (event) => {
@@ -49,13 +51,14 @@ function App() {
 			</div>
 			<Route
 				path='/home'
-				exact
+				exact={true}
 				render={() => {
 					return (
 						<Home
 							onSubmit={onSubmit}
 							onChange={onChange}
 							searchString={searchString}
+							recipes={recipes}
 						/>
 					);
 				}}
@@ -66,7 +69,14 @@ function App() {
 					return <Recipe match={routerProps.match} recipes={recipes} />;
 				}}
 			/>
-			<Foods recipes={recipes} />
+			{/* <Route
+				path='/recipes'
+				exact={true}
+				render={(props) => {
+					return <Foods recipes={recipes} />;
+				}}
+			/> */}
+			
 		</>
 	);
 }
