@@ -1,11 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-function Recipe (props) {
-    return (
-			<div className='image'>
-				<img src={props.image} />
-				<p className='recipe-title'>{props.name}</p>
+function Recipe(props) {
+	console.log(props);
+	const recipes = props.recipes;
+
+	let recipe;
+	for (let i = 0; i < recipes.length; i++) {
+		if (props.match.params.label === recipes[i].label) {
+			recipe = recipe[i];
+		}
+	}
+	return (
+		<div>
+			<div>
+				<img src={recipe.recipe.image} />
 			</div>
-		);
+		</div>
+	);
 }
-export default Recipe
+export default Recipe;

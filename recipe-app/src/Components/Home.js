@@ -5,44 +5,43 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 
-const photos = [
-	{
-		name: 'first image',
-		url: 'https://i.imgur.com/SZoNRuw.jpg',
-	},
-	{
-		name: 'second image',
-		url: 'https://i.imgur.com/inq1jU8.jpg',
-	},
-	{
-		name: 'third image',
-		url: 'https://i.imgur.com/d037V7v.jpg',
-	},
-];
-function Home () {
-	const settings = {
-		dots: true,
-		fade: true,
-		speed: 500,
-		infinite: true,
-		slidesToShow: 1,
-		arrows: true,
-		slidesToScroll: 1,
-		className: 'slides',
-	};
+// const photos = [
+// 	{
+// 		name: 'first image',
+// 		url: 'https://i.imgur.com/SZoNRuw.jpg',
+// 	},
+// 	{
+// 		name: 'second image',
+// 		url: 'https://i.imgur.com/inq1jU8.jpg',
+// 	},
+// 	{
+// 		name: 'third image',
+// 		url: 'https://i.imgur.com/d037V7v.jpg',
+// 	},
+// ];
+function Home (props) {
+	// const settings = {
+	// 	dots: true,
+	// 	fade: true,
+	// 	speed: 500,
+	// 	infinite: true,
+	// 	slidesToShow: 1,
+	// 	arrows: true,
+	// 	slidesToScroll: 1,
+	// 	className: 'slides',
+	// };
 	return (
 		<>
 			<div className='home'>
-				<h1>
-					Easy Cook Recipe
-				</h1>
-				<form className='form'>
+				<form className='form' onSubmit={props.onSubmit}>
 					<input
 						placeholder='Search food'
 						type='text'
 						name='searchString'
                         required
-                        autoComplete="off"
+						autoComplete="off"
+						onChange={props.onChange}
+						value={props.searchString}
 					/>
 					<button type='submit' value='search'>Search</button>
 				</form>
