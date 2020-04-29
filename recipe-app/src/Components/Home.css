@@ -9,7 +9,7 @@
 .link {
 	text-decoration: none;
 }
-h1 {
+.main-header {
 	font-size: 40px;
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;

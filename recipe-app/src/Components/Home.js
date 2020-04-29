@@ -31,6 +31,7 @@ function Home({ onSubmit, onChange, searchString, recipes }) {
 	// 	slidesToScroll: 1,
 	// 	className: 'slides',
 	// };
+
 	return (
 		<>
 			<Search

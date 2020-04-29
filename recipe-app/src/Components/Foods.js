@@ -1,6 +1,5 @@
 import React from 'react';
 import './Food.css';
-import Recipe from './Recipe';
 import { Link } from 'react-router-dom'
 
 function Foods(props) {
@@ -9,7 +8,6 @@ function Foods(props) {
 			<div>No recipes found</div>
 		)
 	}
-	console.log(props.recipes)
 	return (
 		<div className='recipes'>
 			{props.recipes !== [] &&

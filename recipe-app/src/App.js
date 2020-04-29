@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Home from './Components/Home';
-import Foods from './Components/Foods';
 import Recipe from './Components/Recipe';
 import './Components/Home.css';
 import { Route, Link } from 'react-router-dom';
@@ -25,7 +24,6 @@ function App() {
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				console.log(response.hits)
 				setRecipes(response.hits);
 				setSearchString('');
 			})
@@ -45,12 +43,12 @@ function App() {
 	return (
 		<>
 			<div className='header'>
-				<Link to='/home' className='link'>
-					<h1>Easy Cook Recipe</h1>
+				<Link to='/' className='link'>
+					<h1 className='main-header'>Easy Cook Recipe</h1>
 				</Link>
 			</div>
 			<Route
-				path='/home'
+				path='/'
 				exact={true}
 				render={() => {
 					return (
@@ -69,13 +67,7 @@ function App() {
 					return <Recipe match={routerProps.match} recipes={recipes} />;
 				}}
 			/>
-			{/* <Route
-				path='/recipes'
-				exact={true}
-				render={(props) => {
-					return <Foods recipes={recipes} />;
-				}}
-			/> */}
+		
 			
 		</>
 	);

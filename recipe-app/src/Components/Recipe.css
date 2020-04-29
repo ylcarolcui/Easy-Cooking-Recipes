@@ -1,3 +1,8 @@
-.single-image {
-    width: 200px;
+.recipe-image {
+    width: 300px;
+}
+
+.recipe-name {
+font-size: 25px;
+
 }
