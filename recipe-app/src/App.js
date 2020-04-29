@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Home from './Components/Home';
 import Recipe from './Components/Recipe';
 import Search from './Components/Search';
+import Foods from './Components/Foods';
 import './Components/Home.css';
 import { Route, Link, useHistory } from 'react-router-dom';
 
@@ -14,6 +14,7 @@ function App() {
 	let history = useHistory();
 	const [recipes, setRecipes] = useState([]);
 	const [searchString, setSearchString] = useState('');
+	const [lastSearch, setLastSearch] = useState('')
 	const [showFood, setShowFood] = useState(false);
 
 	useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
 			.then((response) => response.json())
 			.then((response) => {
 				setRecipes(response.hits);
+				setLastSearch(searchString)
 				setSearchString('');
 				console.log(response.hits);
 			})
@@ -38,7 +40,7 @@ function App() {
 		event.preventDefault();
 		getRecipes(searchString);
 		console.log(searchString);
-		history.push('/recipes');
+		history.push('/');
 		// setShowFood(!showFood);
 	};
 
@@ -48,25 +50,26 @@ function App() {
 
 	return (
 		<>
-			<div className='header'>
-				<Link to='/recipes' className='link'>
+			<header className='header'>
+				<Link to='/' className='link'>
 					<h1 className='main-header'>Easy Cooking Recipes</h1>
 				</Link>
-			</div>
+			</header>
 			<Search
 				onSubmit={onSubmit}
 				onChange={onChange}
 				searchString={searchString}
 			/>
 			<Route
-				path='/recipes'
+				path='/'
 				exact={true}
 				render={() => {
 					return (
-						<Home
+						<Foods
 							// onSubmit={onSubmit}
 							// onChange={onChange}
-							// searchString={searchString}
+							searchString={searchString}
+							lastSearch={lastSearch}
 							recipes={recipes}
 						/>
 					);

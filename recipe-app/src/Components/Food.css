@@ -4,6 +4,12 @@ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 grid-gap: 3rem;
 margin: 30px ;
 }
+.muted {
+  color: #8f8d8d;
+  padding-left: 30px;
+}
+
+
 
 img {
     width: 100%;

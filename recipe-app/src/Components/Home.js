@@ -20,7 +20,7 @@ import Foods from './Foods';
 // 		url: 'https://i.imgur.com/d037V7v.jpg',
 // 	},
 // ];
-function Home({ onSubmit, onChange, searchString, recipes }) {
+function Home() {
 	// const settings = {
 	// 	dots: true,
 	// 	fade: true,
@@ -35,7 +35,7 @@ function Home({ onSubmit, onChange, searchString, recipes }) {
 	return (
 		<>
 		
-			<Foods recipes={recipes} />
+		
 			{/* <div className='image'>
 				<Slider {...settings}>
 					{photos.map((photo, idx) => {

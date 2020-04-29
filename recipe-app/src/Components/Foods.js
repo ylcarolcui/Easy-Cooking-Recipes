@@ -3,12 +3,17 @@ import './Food.css';
 import { Link } from 'react-router-dom'
 
 function Foods(props) {
+	console.log(props)
 	if(!props.recipes) {
 		return (
-			<div>No recipes found</div>
+			<div>{props.searchString}</div>
 		)
 	}
 	return (
+		<>
+		<p className="muted">
+        Showing results for <strong>{props.lastSearch}</strong>
+      </p>
 		<div className='recipes'>
 			{props.recipes !== [] &&
 				props.recipes.map((recipe) => {
@@ -22,6 +27,7 @@ function Foods(props) {
 					);
 				})}
 		</div>
+		</>
 	);
 }
 
