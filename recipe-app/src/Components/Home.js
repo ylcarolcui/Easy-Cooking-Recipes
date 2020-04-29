@@ -34,11 +34,7 @@ function Home({ onSubmit, onChange, searchString, recipes }) {
 
 	return (
 		<>
-			<Search
-				onSubmit={onSubmit}
-				onChange={onChange}
-				searchString={searchString}
-			/>
+		
 			<Foods recipes={recipes} />
 			{/* <div className='image'>
 				<Slider {...settings}>

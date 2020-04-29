@@ -1,8 +1,48 @@
 .recipe-image {
-    width: 300px;
+    width: 320px;
+    border-radius: 10px;
+}
+.recipe-name {
+	text-align: center;
 }
 
-.recipe-name {
-font-size: 25px;
+.recipe-name h1 {
+	font-size: 25px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-bottom: 1.5rem;
+}
 
+.recipe-info {
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    
+    
+}
+
+.recipe-ingredient {
+	align-self: flex-end;
+	padding-left: 50px;
+}
+
+ul h1 {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 25px;
+	text-align: left;
+	color: #269a73;
+}
+ul {
+	list-style-type: circle;
+}
+ ul li, p{
+     font-size: 20px;
+ }
+
+.more-info {
+	padding: 25px;
+	text-decoration: none;
+}
+.more-info a {
+    color: #269a73;
+    text-decoration: none;
 }

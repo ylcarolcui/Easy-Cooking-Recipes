@@ -10,7 +10,8 @@
 	text-decoration: none;
 }
 .main-header {
-	font-size: 40px;
+	font-family: 'Mouse Memoirs', sans-serif;
+	font-size: 60px;
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin: 2rem 0;
@@ -59,7 +60,8 @@
 }
 button {
 	border-radius: 0.5rem;
-	color: var(--white);
+	color: #fff;
+	background-color: #40b48e;
 	flex-grow: 0;
 	font-size: 1.2rem;
 	line-height: 1;
