@@ -24,7 +24,7 @@ function App() {
 	}, []);
 
 	function getRecipes(searchString) {
-		const url = `https://api.edamam.com/search?q=${searchString}&app_id=${searchOptions.APP_ID}&app_key=${searchOptions.key}&from=0&to=12&calories=500-1000`;
+		const url = `https://api.edamam.com/search?q=${searchString}&app_id=${searchOptions.APP_ID}&app_key=${searchOptions.key}&from=0&to=20&calories=500-1000`;
 		console.log(url);
 
 		fetch(url)
