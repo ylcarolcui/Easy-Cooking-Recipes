@@ -3,15 +3,14 @@ import './Recipe.css';
 
 function Recipe(props) {
 	const recipes = props.recipes;
-	console.log(props);
-
+	
 	let recipe;
 	for (let i = 0; i < recipes.length; i++) {
 		if (props.match.params.name === recipes[i].recipe.label) {
 			recipe = recipes[i];
 		}
 	}
-const here = recipe.recipe.url
+	const here = recipe.recipe.url;
 	return (
 		<div className='recipe-info'>
 			<div className='recipe-name'>
@@ -29,9 +28,13 @@ const here = recipe.recipe.url
 						return <li key={idx}>{ingredient.text}</li>;
 					})}
 				</ul>
-				<p className='more-info'>Please click 
-					<a href={here} target='_blank' rel='noopenner noreferrer'> here
-					</a> for more detailed information.
+				<p className='more-info'>
+					Please click
+					<a href={here} target='_blank' rel='noopenner noreferrer'>
+						{' '}
+						here
+					</a>{' '}
+					for more detailed information.
 				</p>
 			</div>
 		</div>

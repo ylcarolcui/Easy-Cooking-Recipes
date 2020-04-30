@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Recipe from './Components/Recipe';
 import Search from './Components/Search';
 import Foods from './Components/Foods';
+import Footer from './Components/Footer';
 import './Components/Home.css';
 import { Route, Link, useHistory } from 'react-router-dom';
 
@@ -14,11 +15,12 @@ function App() {
 	let history = useHistory();
 	const [recipes, setRecipes] = useState([]);
 	const [searchString, setSearchString] = useState('');
-	const [lastSearch, setLastSearch] = useState('')
-	const [showFood, setShowFood] = useState(false);
+	const [lastSearch, setLastSearch] = useState('');
 
 	useEffect(() => {
 		getRecipes(searchString);
+		console.log('useeffect is called');
+		return setSearchString('');
 	}, []);
 
 	function getRecipes(searchString) {
@@ -29,7 +31,7 @@ function App() {
 			.then((response) => response.json())
 			.then((response) => {
 				setRecipes(response.hits);
-				setLastSearch(searchString)
+				setLastSearch(searchString);
 				setSearchString('');
 				console.log(response.hits);
 			})
@@ -41,7 +43,6 @@ function App() {
 		getRecipes(searchString);
 		console.log(searchString);
 		history.push('/');
-		// setShowFood(!showFood);
 	};
 
 	const onChange = (event) => {
@@ -68,6 +69,7 @@ function App() {
 						<Foods
 							// onSubmit={onSubmit}
 							// onChange={onChange}
+							getRecipes={getRecipes}
 							searchString={searchString}
 							lastSearch={lastSearch}
 							recipes={recipes}
@@ -81,6 +83,7 @@ function App() {
 					return <Recipe match={routerProps.match} recipes={recipes} />;
 				}}
 			/>
+			<Footer />
 		</>
 	);
 }
