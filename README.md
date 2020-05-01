@@ -27,12 +27,11 @@ My app is called Easy Cooking Recipe to help those people who want to easily loo
 
 ##### Post MVP Stretch Goals
 
-- As a user, I want to see more info of food (eg: nutrition info) 
+- As a user, I want to see more info of food (eg: nutrition info)
 
 ## API
 
-[Link to the API's documentation I used.](https://developer.edamam.com/edamam-docs-recipe-api
-)
+[Link to the API's documentation I used.](https://developer.edamam.com/edamam-docs-recipe-api)
 
 #### Sample response
 
