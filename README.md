@@ -1,63 +1,68 @@
-## Project Description
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-My app is called Easy Cooking Recipe to help those people who want to easily look for recipes with dynamic categories. User can find recipes by type in the searching bar and click search button. Users will see 20 different recipes for each categories and once one of the food is clicked, the ingredient for specific food will show on the page. Users can always click a link for more detailed information of selected food.
+## Available Scripts
 
-### Sample image of homepage
+In the project directory, you can run:
 
-![](https://i.imgur.com/CHsL6DY.png)
+### `yarn start`
 
-### Sample image of ingredient page
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![](https://i.imgur.com/lGZmJaK.png)
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-### Components
+### `yarn test`
 
-- App (root component)
-- Search (includes form, input and search button)
-- Foods (the container shows 20 results of searched food)
-- Recipe (ingredient page with more info link)
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### MVP User Stories
+### `yarn build`
 
-##### MVP User Stories
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- As a user, I want to find food by searching the categories.
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-- As a user, I want to see ingredient and recipe of food I am interested in.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-##### Post MVP Stretch Goals
+### `yarn eject`
 
-- As a user, I want to see more info of food (eg: nutrition info)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## API
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-[Link to the API's documentation I used.](https://developer.edamam.com/edamam-docs-recipe-api)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-#### Sample response
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```
-{
-  "q" : "chicken",
-  "from" : 0,
-  "to" : 10,
-  "more" : true,
-  "count" : 161,
-  "hits" : [ {
-    "recipe" : {
-      "uri" : "http://www.edamam.com/ontologies/edamam.owl#recipe_3da1169eb633a5e4607890ebf7dee89f",
-      "label" : "Grilled Butterflied Chicken Recipe",
-      "image" : "https://www.edamam.com/web-img/7a2/7a2f41a7891e8a8f8a087a96930c6463.jpg",
-      "source" : "Serious Eats",
-      "url" : "http://www.seriouseats.com/recipes/2012/08/grilled-butterflied-chicken-recipe.html",
-      "shareAs" : "http://www.edamam.com/recipe/grilled-butterflied-chicken-recipe-3da1169eb633a5e4607890ebf7dee89f/chicken/2-ing",
-      "yield" : 4.0,
-      "dietLabels" : [ "Low-Carb" ],
-      "healthLabels" : [ "Sugar-Conscious", "Peanut-Free", "Tree-Nut-Free", "Alcohol-Free" ],
-      "cautions" : [ ],
-     }
+## Learn More
 
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Future improvement
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Whenever the page reloads I see a screen flash, I will change some functionality to make the page reload smoother and add more features to my app. For instance, adding drop-down list outside of the form element with categories that users can select.
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `yarn build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
