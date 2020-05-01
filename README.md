@@ -61,3 +61,5 @@ My app is called Easy Cooking Recipe to help those people who want to easily loo
 ### Future improvement
 
 Whenever the page reloads I see a screen flash, I will change some functionality to make the page reload smoother and add more features to my app. For instance, adding drop-down list outside of the form element with categories that users can select.
+
+[Please click here to see my recipe app!](https://recipeapp-12345.herokuapp.com)
