@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 function Foods(props) {
 	
 	useEffect(() => {
-		return props.getRecipes('');
+		return props.getRecipes('healthy');
 	}, []);
 
 	return (

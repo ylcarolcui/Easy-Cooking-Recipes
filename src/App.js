@@ -19,21 +19,19 @@ function App() {
 
 	useEffect(() => {
 		getRecipes(searchString);
-		console.log('useeffect is called');
 		return setSearchString('');
 	}, []);
 
-	function getRecipes(searchString) {
-		const url = `https://api.edamam.com/search?q=${searchString}&app_id=${searchOptions.APP_ID}&app_key=${searchOptions.key}&from=0&to=20&calories=500-1000`;
+	function getRecipes(search) {
+		const url = `https://api.edamam.com/search?q=${search}&app_id=${searchOptions.APP_ID}&app_key=${searchOptions.key}&from=0&to=20&calories=500-1000`;
 		console.log(url);
 
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
 				setRecipes(response.hits);
-				setLastSearch(searchString);
 				setSearchString('');
-				console.log(response.hits);
+				setLastSearch(searchString);
 			})
 			.catch(console.error);
 	}
@@ -41,11 +39,12 @@ function App() {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		getRecipes(searchString);
-		console.log(searchString);
+		
 		history.push('/');
 	};
 
 	const onChange = (event) => {
+		console.log(event.target)
 		setSearchString(event.target.value);
 	};
 
@@ -67,10 +66,8 @@ function App() {
 				render={() => {
 					return (
 						<Foods
-							// onSubmit={onSubmit}
-							// onChange={onChange}
 							getRecipes={getRecipes}
-							searchString={searchString}
+							// searchString={searchString}
 							lastSearch={lastSearch}
 							recipes={recipes}
 						/>
