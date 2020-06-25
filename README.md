@@ -4,11 +4,7 @@ My app is called Easy Cooking Recipe to help those people who want to easily loo
 
 ### Sample image of homepage
 
-![](https://i.imgur.com/CHsL6DY.png)
-
-### Sample image of ingredient page
-
-![](https://i.imgur.com/lGZmJaK.png)
+![](https://i.imgur.com/pbHy2V3.png)
 
 ### Components
 
